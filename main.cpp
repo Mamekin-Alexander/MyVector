@@ -4,13 +4,13 @@
 #include "Vector.h"
 int main()
 {
-	my::Vector<std::pair<int, int>> a;
-	a.push_back(std::pair<int, int>(1, 2));
-	my::Vector<std::pair<int, int>>::Iterator i (a.begin());
+	my::Vector<int> a{ 1,2,3,4,5 };
+	my::Vector<int>::Iterator i = a.begin();
+	*i++ = 5;
 	while (i != a.end())
 	{
-		std::cout << i->second << " ";
+		std::cout << *i<< " ";
 		++i;
 	}
-    std::cout << "Hello World!\n";
+	std::cout << *a.begin();
 }

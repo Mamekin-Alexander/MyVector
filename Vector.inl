@@ -130,11 +130,18 @@ typename my::Vector<T>::ConstIterator my::Vector<T>::end() const
 template <class T>
 typename my::Vector<T>::Iterator my::Vector<T>::begin()
 {
-	return Iterator(m_data);
+	if (m_size != 0)
+	{
+		return Iterator(m_data);
+	}
+	else return NULL;
 }
 
 template <class T>
 typename my::Vector<T>::Iterator my::Vector<T>::end()
 {
-	return Iterator(m_data + m_size);
+	if (m_size != 0) {
+		return Iterator(m_data + m_size);
+	}
+	else return NULL;
 }
