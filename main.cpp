@@ -4,13 +4,13 @@
 #include "Vector.h"
 int main()
 {
-	my::Vector<int> a{ 1,2,3,4,5 };
+	my::Vector<int> a{ 5,1,2,4 };
+	std::sort(a.begin(), a.end());
 	my::Vector<int>::Iterator i = a.begin();
-	*i++ = 5;
 	while (i != a.end())
 	{
-		std::cout << *i<< " ";
+		std::cout << *i << " ";
 		++i;
 	}
-	std::cout << *a.begin();
+	return 0;
 }
