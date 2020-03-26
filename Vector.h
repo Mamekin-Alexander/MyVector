@@ -9,8 +9,11 @@ public:
 	typedef my::Iterator<const T> ConstIterator;
 
 	Vector();
-	Vector(const std::initializer_list<T>&);
 	Vector(const Vector&);
+	Vector& operator=(const Vector&);
+	Vector(Vector&&) noexcept;
+	Vector& operator=(Vector&&) noexcept;
+	Vector(const std::initializer_list<T>&);
 	~Vector();
 
 	void resize(const int32_t&);
